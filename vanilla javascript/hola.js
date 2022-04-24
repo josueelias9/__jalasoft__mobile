@@ -2,76 +2,61 @@ API_country = "https://restcountries.com/v2/lang/es";
 
 
 async function getAPI() {
-    fetch(API_country)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            let a = "";
-            console.log(data);
+
+    const response = await fetch(API_country);
+    const data = await response.json();
+
+    let a = "";
+    console.log(data);
+
+    for (let i = 0; i < data.length; i++) {
+        a = a + data[i].name + "<br>";
+        a = a + data[i].capital + "<br>";
+        a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
+        a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
+    }
+    document.getElementById("prueba").innerHTML = a;
+
+}
 
 
-            for (let i = 0; i < data.length; i++) {
-                a = a + data[i].name + "<br>";
-                a = a + data[i].capital + "<br>";
-                a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
-                a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
+async function population_sorting() {
+    const response = await fetch(API_country);
+    const data = await response.json();
 
-            }
-            document.getElementById("prueba").innerHTML = a;
+    let a = "";
+    console.log(data);
+    data.sort((a, b) => parseFloat(b.population) - parseFloat(a.population));
 
-        });
+    for (let i = 0; i < data.length; i++) {
+        a = a + data[i].name + "<br>";
+        a = a + data[i].capital + "<br>";
+        a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
+        a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
+    }
+    document.getElementById("prueba").innerHTML = a;
 }
 
 
-function population_sorting() {
+async function area_sorting() {
+    const response = await fetch(API_country);
+    const data = await response.json();
 
-    fetch(API_country)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            let a = "";
-            console.log(data);
-            data.sort((a, b) => parseFloat(b.population) - parseFloat(a.population));
+    let a = "";
+    console.log(data);
+    data.sort((a, b) => parseFloat(b.area) - parseFloat(a.area));
 
-            for (let i = 0; i < data.length; i++) {
-                a = a + data[i].name + "<br>";
-                a = a + data[i].capital + "<br>";
-                a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
-                a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
-
-            }
-            document.getElementById("prueba").innerHTML = a;
-
-        });
-
-}
-function area_sorting() {
-    fetch(API_country)
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            let a = "";
-            console.log(data);
-            data.sort((a, b) => parseFloat(b.area) - parseFloat(a.area));
-
-            for (let i = 0; i < data.length; i++) {
-                a = a + data[i].name + "<br>";
-                a = a + data[i].capital + "<br>";
-                a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
-                a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
-            }
-            document.getElementById("prueba").innerHTML = a;
-
-        });
+    for (let i = 0; i < data.length; i++) {
+        a = a + data[i].name + "<br>";
+        a = a + data[i].capital + "<br>";
+        a = a + "<a href='detail.html?id=" + data[i].numericCode + "'>detalle</a><br>";
+        a = a + "<img src='" + data[i].flag + "' width='100' height='50'>" + "<br><br>";
+    }
+    document.getElementById("prueba").innerHTML = a;
 
 }
 
 async function detailView() {
-
-
     var results = [];
     var searchField = "numericCode";
     var searchVal = parseInt(getParameterByName("id"));
@@ -80,7 +65,6 @@ async function detailView() {
     const data = await response.json();
 
     let a = "";
-
 
     for (var i = 0; i < await data.length; i++) {
         if (await data[i][searchField] == searchVal) {
@@ -97,8 +81,6 @@ async function detailView() {
     a = a + "<img src='" + results[0].flag + "' width='100' height='50'>" + "<br><br>";
 
     document.getElementById("prueba").innerHTML = a;
-
-
 }
 
 
