@@ -1,4 +1,5 @@
-function DetailCountry() {
+function DetailCountry(props) {
+    
     return <h2>detalleeeeee</h2>;
 }
 

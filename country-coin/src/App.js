@@ -11,8 +11,33 @@ import {
 
 import DetailCountry from './pagina_1/DetailCountry';
 import ListCountry from './pagina_1/ListCountry';
+import Prueba from './pagina_1/Prueba';
+
+const paises = [
+  {
+    id:1,
+    pais: 'japon',
+    capital: 'honkong'
+  }, {
+    id:2,
+    pais: 'peru',
+    capital: 'lima'
+  }, {
+    id:3,
+    pais: 'ecuador',
+    capital: 'quito'
+  }, {
+    id:4,
+    pais: 'peru',
+    capital: 'lima'
+  }];
+
 
 function App() {
+  const location = {
+    pathname: '/somewhere',
+    search: "?sort=name"
+  }
   return (
     <Router>
       <div>
@@ -24,14 +49,18 @@ function App() {
             <li>
               <Link to="/detail">detail</Link>
             </li>
+            <li>
+              <Link to={location}>casa</Link>
+            </li>
           </ul>
         </nav>
 
         {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/detail" element={<DetailCountry/>} />
-          <Route path="/list" element={<ListCountry/>} />
+          <Route path="/detail" element={<DetailCountry />} />
+          <Route path="/list" element={<ListCountry paises={paises} />} />
+          <Route path="/prueba/:id" element={<Prueba />} />
         </Routes>
       </div>
     </Router>
