@@ -11,7 +11,6 @@ import {
 
 import DetailCountry from './pagina_1/DetailCountry';
 import ListCountry from './pagina_1/ListCountry';
-import Prueba from './pagina_1/Prueba';
 
 const paises = [
   {
@@ -58,9 +57,8 @@ function App() {
         {/* A <Routes> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/detail" element={<DetailCountry />} />
           <Route path="/list" element={<ListCountry paises={paises} />} />
-          <Route path="/prueba/:id" element={<Prueba />} />
+          <Route path="/detail/:id" element={<DetailCountry />} />
         </Routes>
       </div>
     </Router>
