@@ -11,7 +11,7 @@ import {
 
 import DetailCountry from './pagina_1/DetailCountry';
 import ListCountry from './pagina_1/ListCountry';
-
+import GetAPI from './pagina_1/api';
 const paises = [
   {
     id:1,
@@ -46,7 +46,7 @@ function App() {
               <Link to="/list">list</Link>
             </li>
             <li>
-              <Link to="/detail">detail</Link>
+              <Link to='/api'>api</Link>
             </li>
             <li>
               <Link to={location}>casa</Link>
@@ -59,6 +59,7 @@ function App() {
         <Routes>
           <Route path="/list" element={<ListCountry paises={paises} />} />
           <Route path="/detail/:id" element={<DetailCountry />} />
+          <Route path="/api" element={<GetAPI/>} />
         </Routes>
       </div>
     </Router>
