@@ -2,14 +2,12 @@ import Card from 'react-bootstrap/Card';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-import { Link } from "react-router-dom";
-
 
 function CompDetail(props) {
     const country = props.country;
 
     return <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={country.flags.svg} />
+        <Card.Img variant="top" src={country.flag} />
         <Card.Body>
             <Card.Title>{country.name}</Card.Title>
             <Card.Text>
@@ -25,13 +23,7 @@ function CompDetail(props) {
             <ListGroupItem>Region: {country.region}</ListGroupItem>
             <ListGroupItem>Numeric code: {parseInt(country.numericCode)}</ListGroupItem>
         </ListGroup>
-        <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
 
-
-        <Link to="/nothing-here">Prueba</Link>
     </Card>;
 }
 

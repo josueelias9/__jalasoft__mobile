@@ -1,14 +1,13 @@
 import CompDetail from "./compDetail";
-
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
-import { Link } from "react-router-dom";
-
 
 const API_country = "https://restcountries.com/v2/lang/es";
 
 
-function CompList(props) {
+function Temp(props) {
+    let { id } = useParams();
 
     const [countries, setCountries] = useState([]);
 
@@ -21,13 +20,17 @@ function CompList(props) {
         api_get();
     }, []);
 
-    const listItems = countries.map((country) =>
-        <Container className="m-3 p-3" key={country.population}>
-            <CompDetail country={country} />
-            <Link to={`/detail/${parseInt(country.numericCode)}`}>home</Link>
-        </Container>);
+    let country = {};
 
-    return listItems;
+    for (var i = 0; i < countries.length; i++) {
+        if (parseInt(countries[i].numericCode) == id) {
+            console.log(countries[i].name);
+            console.log("es igual!");
+            country = countries[i];
+        }
+    }
+
+    return <Container className="m-3 p-3"><CompDetail country={country} /></Container>;
 }
 
-export default CompList;
+export default Temp;
