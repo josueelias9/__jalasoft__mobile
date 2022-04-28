@@ -5,6 +5,7 @@ import CompHome from './components/compHome';
 import CompNavbar from './components/compNavbar';
 import CompList from './components/compList';
 import Temp from './components/temp';
+import CompFilter from './components/compFilter';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <h1>Jalasoft Project</h1>
       <li><Link to="/">home</Link></li>
       <li><Link to="/list">lista de paises</Link></li>
+      <CompFilter />
+
       <Routes>
         <Route path="/" element={<CompHome />} />
         <Route path="/list" element={<CompList />} />

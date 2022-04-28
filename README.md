@@ -11,3 +11,7 @@ bSxQwVeMtj6f2rg
 
 
 # deploy
+
+
+# videos
+local storage [link](https://www.youtube.com/watch?v=Qp-fC9zXyJ4)

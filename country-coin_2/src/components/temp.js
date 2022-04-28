@@ -17,8 +17,6 @@ function Temp(props) {
 
     for (var i = 0; i < countries.length; i++) {
         if (parseInt(countries[i].numericCode) == id) {
-            console.log(countries[i].name);
-            console.log("es igual!");
             country = countries[i];
         }
     }
