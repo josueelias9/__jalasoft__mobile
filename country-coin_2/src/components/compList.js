@@ -1,18 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router-dom";
 import CompCountry from "./compCountry";
 
 
 function CompList(props) {
-
-    const [countries, setCountries] = useState([]);
-
-    useEffect(() => {
-        setCountries(JSON.parse(localStorage.getItem('storage1')));
-    }, []);
-
+    const countries = props.filteredList;
 
     const listItems = countries.map((country) =>
         <Container className="m-3 p-3" key={country.population}>
