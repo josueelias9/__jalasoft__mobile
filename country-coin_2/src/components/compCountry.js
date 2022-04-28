@@ -3,7 +3,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 
-function CompDetail(props) {
+function CompCountry(props) {
     const country = props.country;
 
     return <Card style={{ width: '18rem' }}>
@@ -28,4 +28,4 @@ function CompDetail(props) {
 }
 
 
-export default CompDetail;
+export default CompCountry;

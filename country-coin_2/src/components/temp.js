@@ -1,9 +1,7 @@
-import CompDetail from "./compDetail";
+import CompCountry from "./compCountry";
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
-
-const API_country = "https://restcountries.com/v2/lang/es";
 
 
 function Temp(props) {
@@ -12,12 +10,7 @@ function Temp(props) {
     const [countries, setCountries] = useState([]);
 
     useEffect(() => {
-        async function api_get() {
-            const response = await fetch(API_country);
-            const json = await response.json();
-            setCountries(json);
-        }
-        api_get();
+        setCountries(JSON.parse(localStorage.getItem('storage1')));
     }, []);
 
     let country = {};
@@ -30,7 +23,7 @@ function Temp(props) {
         }
     }
 
-    return <Container className="m-3 p-3"><CompDetail country={country} /></Container>;
+    return <Container className="m-3 p-3"><CompCountry country={country} /></Container>;
 }
 
 export default Temp;
