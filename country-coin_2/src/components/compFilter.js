@@ -6,9 +6,9 @@ function CompFilter() {
 
     const elements = JSON.parse(localStorage.getItem('storage1'));
 
-    const [filteredList, setFilteredList] = useState(elements);
+    const [data, setData] = useState(elements);
 
-    function my_filter(event) {
+    function myFilter(event) {
         let a = elements.filter(
             (element) => {
                 const stringThatIncludes = element.name.toLowerCase();
@@ -18,14 +18,38 @@ function CompFilter() {
                 }
             }
         );
-        setFilteredList(a);
+        setData(a);
     }
 
-    console.log(filteredList);
+    function sortByName() {
+        const elementsSorted = elements.sort(
+            (a, b) => { return a.name - b.name }
+        );
+        setData(elementsSorted);
+    }
+
+    function sortByPopulation() {
+        const elementsSorted = elements.sort(
+            (a, b) => { return a.population - b.population }
+        );
+        setData(elementsSorted);
+    }
+
+    function sortByArea() {
+        const elementsSorted = elements.sort(
+            (a, b) => { return a.area - b.area }
+        );
+        setData(elementsSorted);
+    }
+
+    
 
     return <div className="m-3 p-3">
-        <input onChange={my_filter} />
-        <CompList filteredList={filteredList} />
+        <input onChange={myFilter} />
+        <button onClick={sortByName}>Sort by name</button>
+        <button onClick={sortByPopulation}>Sort by population</button>
+        <button onClick={sortByArea}>Sort by area</button>
+        <CompList data={data} />
     </div>;
 }
 

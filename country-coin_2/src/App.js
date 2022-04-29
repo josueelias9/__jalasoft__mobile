@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import CompHome from './components/compHome';
 import CompNavbar from './components/compNavbar';
 import Temp from './components/temp';
-import Project from './components/compProject';
+import CompFilter from './components/compFilter';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
 <CompNavbar />      
       <Routes>
         <Route path="/" element={<CompHome />} />
-        <Route path="/project" element={<Project />} />
+        <Route path="/filter" element={<CompFilter />} />
         <Route path="/detail/:id" element={<Temp />} />
       </Routes>
 

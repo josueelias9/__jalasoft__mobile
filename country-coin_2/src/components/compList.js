@@ -5,7 +5,7 @@ import CompCountry from "./compCountry";
 
 
 function CompList(props) {
-    const countries = props.filteredList;
+    const countries = props.data;
 
     const listItems = countries.map((country) =>
         <Container className="m-3 p-3" key={country.population}>
