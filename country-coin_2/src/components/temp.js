@@ -21,7 +21,17 @@ function Temp(props) {
         }
     }
 
-    return <Container className="m-3 p-3"><CompCountry country={country} /></Container>;
+    function currency(event) {
+        const val = event.target.value;
+        if (!isNaN(val)) console.log("es un numero");
+    }
+
+    return <Container className="m-3 p-3">
+        <CompCountry country={country} />
+        <li>Population: {country.population}</li>
+        <li>Area: {country.area}</li>
+        <input onChange={currency}></input>
+    </Container>;
 }
 
 export default Temp;

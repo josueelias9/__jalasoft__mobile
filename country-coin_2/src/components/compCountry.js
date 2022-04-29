@@ -18,8 +18,6 @@ function CompCountry(props) {
         </Card.Body>
         <ListGroup className="list-group-flush">
             <ListGroupItem>Capital: {country.capital}</ListGroupItem>
-            <ListGroupItem>Population: {country.population}</ListGroupItem>
-            <ListGroupItem>Area: {country.area}</ListGroupItem>
             <ListGroupItem>Region: {country.region}</ListGroupItem>
             <ListGroupItem>Numeric code: {parseInt(country.numericCode)}</ListGroupItem>
         </ListGroup>
