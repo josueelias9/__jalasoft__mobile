@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-function CompNavbar(props) {
+function CompTopNavbar(props) {
     return <>
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -17,4 +17,4 @@ function CompNavbar(props) {
     </>;
 }
 
-export default CompNavbar;
+export default CompTopNavbar;
