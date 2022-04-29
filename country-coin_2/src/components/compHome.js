@@ -28,9 +28,9 @@ function CompHome() {
       <Accordion.Item eventKey="0">
         <Accordion.Header>About...</Accordion.Header>
         <Accordion.Body>
-          jalasoft bootcamp exercise. It emphasizes the use of tools for frontend development. Two APIs are offered for data consumption. The exercise is detailed in the repository of this project. 
+          jalasoft bootcamp exercise. It emphasizes the use of tools for frontend development. Two APIs are offered for data consumption. The exercise is detailed in the repository of this project.
           <a href="https://github.com/josueelias9/reto-jalasoft"> Go to the repository</a>
-          
+
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">

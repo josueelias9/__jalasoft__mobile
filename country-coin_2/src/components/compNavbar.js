@@ -8,7 +8,7 @@ function CompNavbar(props) {
             <Container>
                 <Navbar.Brand href="/">Home</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/filter">List of countries</Nav.Link>
+                    <Nav.Link href="/project">List of countries</Nav.Link>
                     <Nav.Link href="https://github.com/josueelias9/reto-jalasoft">Repository</Nav.Link>
                     <Nav.Link href="https://jalasoft.com/">Jalasoft</Nav.Link>
                 </Nav>

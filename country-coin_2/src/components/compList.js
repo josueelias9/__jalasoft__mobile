@@ -10,7 +10,7 @@ function CompList(props) {
     const listItems = countries.map((country) =>
         <Container className="m-3 p-3" key={country.population}>
             <CompCountry country={country} />
-            <Link to={`/detail/${parseInt(country.numericCode)}`}>home</Link>
+            <Link to={`/detail/${parseInt(country.numericCode)}`}>Detail</Link>
         </Container>);
 
     return listItems;
